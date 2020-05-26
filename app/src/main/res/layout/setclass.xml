@@ -1,0 +1,694 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SetClass"
+    android:id="@+id/SetClass">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_gravity="center"
+        android:background="#B3E5FC"
+        android:paddingStart="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_cloud5" />
+
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:text="e簽到-班級設定"
+        android:textColor="#283593"
+        android:background="#B3E5FC"
+        android:paddingStart="10dp"
+        android:paddingTop="3dp"
+        android:gravity="center_vertical|left"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="@id/imageView"
+        app:layout_constraintBottom_toBottomOf="@id/imageView"
+        app:layout_constraintStart_toEndOf="@id/imageView"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/row_border">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_weight="1.5"
+                        android:text="班級"
+                        android:gravity="center_vertical|right"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/txtClassId"
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:layout_weight="5"
+                        android:background="@drawable/text_border"
+                        android:paddingStart="8dp"
+                        android:text="班級代號(系統自動給號)"
+                        android:gravity="center_vertical|left"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/row_border">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_weight="1.5"
+                        android:text="導師"
+                        android:gravity="center_vertical|right"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/txtTutorId"
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:layout_weight="5"
+                        android:background="@drawable/text_border"
+                        android:paddingStart="8dp"
+                        android:text="系統帶出導師帳號,姓名"
+                        android:gravity="center_vertical|left"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/row_border">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_weight="1.5"
+                        android:text="年度"
+                        android:gravity="center_vertical|right"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/edtYear"
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:layout_weight="5"
+                        android:background="@drawable/text_border"
+                        android:inputType="textPersonName"
+                        android:paddingStart="8dp"
+                        android:hint="輸入西元年4碼"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/row_border">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_weight="1.5"
+                        android:text="梯次"
+                        android:gravity="center_vertical|right"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/edtTerm"
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:layout_weight="5"
+                        android:background="@drawable/text_border"
+                        android:inputType="textPersonName"
+                        android:paddingStart="8dp"
+                        android:hint="輸入梯次"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/row_border">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_weight="1.5"
+                        android:text="課程名稱"
+                        android:gravity="center_vertical|right"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/edtClassName"
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:layout_weight="5"
+                        android:background="@drawable/text_border"
+                        android:inputType="textPersonName"
+                        android:paddingStart="8dp"
+                        android:hint="輸入課程名稱"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/row_border">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_weight="1.5"
+                        android:gravity="center_vertical|right"
+                        android:text="班級人數"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/edtMaxStudent"
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:layout_weight="5"
+                        android:background="@drawable/text_border"
+                        android:inputType="textPersonName"
+                        android:paddingStart="8dp"
+                        android:hint="輸入班級人數"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/row_border">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_weight="1.5"
+                        android:gravity="center_vertical|right"
+                        android:text="註冊密碼"
+                        android:textSize="16sp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="8dp"
+                        android:layout_weight="5"
+                        android:background="@drawable/text_border">
+
+                        <TextView
+                            android:id="@+id/txtRegPassWord"
+                            android:layout_width="0dp"
+                            android:layout_height="32dp"
+                            android:layout_weight="5"
+                            android:gravity="center_vertical|left"
+                            android:text="00000(未開放)"
+                            android:textSize="16sp" />
+
+                        <Switch
+                            android:id="@+id/swhRegSts"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:scaleX="1.3"
+                            android:scaleY="1"
+                            android:layout_marginEnd="25dp"
+                            android:gravity="center_vertical|right"
+                            android:layout_weight="1" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/row_border">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_weight="1.5"
+                        android:text="開訓日期"
+                        android:gravity="center_vertical|right"
+                        android:textSize="16sp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="8dp"
+                        android:layout_weight="5"
+                        android:background="@drawable/text_border">
+
+                    <TextView
+                        android:id="@+id/txtStartDate"
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:layout_weight="5"
+                        android:gravity="center_vertical|left"
+                        android:paddingStart="8dp"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:id="@+id/imgStartDate"
+                        android:layout_width="0dp"
+                        android:layout_height="24dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_weight="0.8"
+                        android:background="#E1F5FE"
+                        android:onClick="clickDatePicker"
+                        android:src="@drawable/ic_calendar"
+                        android:layout_gravity="center" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/row_border">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_weight="1.5"
+                        android:text="結訓日期"
+                        android:gravity="center_vertical|right"
+                        android:textSize="16sp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="8dp"
+                        android:layout_weight="5"
+                        android:background="@drawable/text_border">
+
+                    <TextView
+                        android:id="@+id/txtEndDate"
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:layout_weight="5"
+                        android:gravity="center_vertical|left"
+                        android:paddingStart="8dp"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:id="@+id/imgEndDate"
+                        android:layout_width="0dp"
+                        android:layout_height="24dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_weight="0.8"
+                        android:background="#E1F5FE"
+                        android:onClick="clickDatePicker"
+                        android:src="@drawable/ic_calendar"
+                        android:layout_gravity="center" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/row_border">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_weight="1.5"
+                        android:text="上午簽到"
+                        android:gravity="center_vertical|right"
+                        android:textSize="16sp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="5"
+                        android:background="@drawable/text_border"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="30dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="5dp"
+                            android:paddingStart="8dp"
+                            android:paddingTop="6dp"
+                            android:text="起"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/txtSin01STime"
+                            android:layout_width="50dp"
+                            android:layout_height="match_parent"
+                            android:paddingStart="5dp"
+                            android:gravity="center_vertical|left"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:id="@+id/imgSin01STime"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_gravity="center"
+                            android:layout_marginEnd="10dp"
+                            android:background="#E1F5FE"
+                            android:onClick="clickTimePicker"
+                            android:src="@drawable/ic_circular_clock" />
+
+                        <TextView
+                            android:layout_width="30dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
+                            android:paddingStart="8dp"
+                            android:paddingTop="6dp"
+                            android:text="迄"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/txtSin01ETime"
+                            android:layout_width="50dp"
+                            android:layout_height="match_parent"
+                            android:paddingStart="5dp"
+                            android:gravity="center_vertical|left"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:id="@+id/imgSin01ETime"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_marginEnd="10dp"
+                            android:background="#E1F5FE"
+                            android:onClick="clickTimePicker"
+                            android:src="@drawable/ic_circular_clock"
+                            android:layout_gravity="center" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/row_border">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_weight="1.5"
+                        android:text="下午簽到"
+                        android:gravity="center_vertical|right"
+                        android:textSize="16sp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="5"
+                        android:background="@drawable/text_border"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="30dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="5dp"
+                            android:paddingStart="8dp"
+                            android:paddingTop="6dp"
+                            android:text="起"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/txtSin02STime"
+                            android:layout_width="50dp"
+                            android:layout_height="match_parent"
+                            android:paddingStart="5dp"
+                            android:gravity="center_vertical|left"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:id="@+id/imgSin02STime"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_marginEnd="10dp"
+                            android:background="#E1F5FE"
+                            android:onClick="clickTimePicker"
+                            android:src="@drawable/ic_circular_clock"
+                            android:layout_gravity="center" />
+
+                        <TextView
+                            android:layout_width="30dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
+                            android:paddingStart="8dp"
+                            android:paddingTop="6dp"
+                            android:text="迄"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/txtSin02ETime"
+                            android:layout_width="50dp"
+                            android:layout_height="match_parent"
+                            android:paddingStart="5dp"
+                            android:gravity="center_vertical|left"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:id="@+id/imgSin02ETime"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_marginEnd="10dp"
+                            android:background="#E1F5FE"
+                            android:onClick="clickTimePicker"
+                            android:src="@drawable/ic_circular_clock"
+                            android:layout_gravity="center" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:layout_marginBottom="3dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/row_border">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="5dp"
+                        android:layout_weight="1.5"
+                        android:text="簽到距離"
+                        android:gravity="center_vertical|right"
+                        android:textSize="16sp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="5"
+                        android:background="@drawable/text_border"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/edtDistance"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="-5dp"
+                            android:layout_weight="1"
+                            android:inputType="textPersonName"
+                            android:paddingStart="8dp"
+                            android:paddingEnd="3dp"
+                            android:hint="距離"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginEnd="15dp"
+                            android:layout_weight="5"
+                            android:paddingStart="0dp"
+                            android:paddingTop="6dp"
+                            android:paddingEnd="5dp"
+                            android:text="公尺"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/row_border">
+
+                    <Button
+                        android:id="@+id/startUpdatesButton"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="1dp"
+                        android:layout_weight="1.55"
+                        android:text="開始定位"
+                        android:onClick="btnStartUpdLoc"
+                        android:textSize="12sp"
+                        android:background="@drawable/button_rounde"
+                        android:textStyle="bold"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="0dp"
+                        android:layout_weight="5"
+                        android:background="@drawable/row_border">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:background="@drawable/text_border"
+                            android:orientation="vertical"
+                            android:paddingStart="6dp">
+
+                            <TextView
+                                android:id="@+id/longitude_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="20dp"
+                                android:layout_marginTop="1dp"
+                                android:text="經度"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/latitude_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="20dp"
+                                android:text="緯度"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/last_update_time_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="20dp"
+                                android:textSize="14sp"
+                                android:text="@string/last_update_time_label"/>
+
+                        </LinearLayout>
+
+                        <Button
+                            android:id="@+id/stopUpdatesButton"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="1dp"
+                            android:layout_weight="1.3"
+                            android:text="結束定位"
+                            android:onClick="btnStopUpdLoc"
+                            android:textSize="12sp"
+                            android:background="@drawable/button_rounde"
+                            android:textStyle="bold"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txtEmpty"
+                android:layout_width="match_parent"
+                android:layout_height="600dp"
+                android:text=""
+                tools:text="空白空間,讓輸入時畫面有空間捲動,不致於被鍵盤擋住無法輸入" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+    <LinearLayout
+        android:id="@+id/classbtnSelecter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <Button
+            android:id="@+id/btnAddClass"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/button_fixbox"
+            android:onClick="classBtnControl"
+            android:text="開新班級"
+            android:textColor="@android:color/primary_text_light"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnEditClass"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/button_fixbox"
+            android:onClick="classBtnControl"
+            android:text="修改設定"
+            android:textColor="@android:color/primary_text_light"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
